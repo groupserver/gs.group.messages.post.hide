@@ -19,7 +19,7 @@ import os
 from setuptools import setup, find_packages
 from version import get_version
 
-name = 'gs.group.messages.post.base'
+name = 'gs.group.messages.post.hide'
 version = get_version()
 
 with codecs.open('README.rst', encoding='utf-8') as f:
@@ -46,10 +46,8 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords='groupserver, message, email, post',
-    author='Richard Waid',
-    author_email='richard@onlinegroups.net',
-    maintainer='Michael JasonSmith',
-    maintainer_email='mpj17@onlinegroups.net',
+    author='Michael JasonSmith',
+    author_email='mpj17@onlinegroups.net',
     url='https://github.com/groupserver/{0}/'.format(name),
     license='ZPL 2.1',
     packages=find_packages(exclude=['ez_setup']),
