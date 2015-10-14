@@ -17,6 +17,15 @@
   <i18n:registerTranslations directory="locales" />
   <include package="zope.viewlet" file="meta.zcml" />
 
+  <browser:viewlet
+    name="gs-group-messages-post-hide"
+    manager="gs.group.messages.post.base.interfaces.IActions"
+    class=".viewlet.HideViewlet"
+    template="browser/templates/action.pt"
+    permission="zope2.View"
+    weight="20"
+    title="Hide" />
+
   <browser:page
     for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
     name="hide_post.ajax"
@@ -39,6 +48,15 @@
     permission="zope2.Public"/>
   <browser:resource
     name="gs-group-messages-post-hide-min-20140327.js"
+    file="browser/javascript/hide-post.js"
+    permission="zope2.Public"/>
+
+  <browser:resource
+    name="gs-group-messages-post-hide-20151014.js"
+    file="browser/javascript/hide-post.js"
+    permission="zope2.Public"/>
+  <browser:resource
+    name="gs-group-messages-post-hide-min-20151014.js"
     file="browser/javascript/hide-post-min.js"
     permission="zope2.Public"/>
 

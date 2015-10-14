@@ -13,6 +13,9 @@ Hiding a post on GroupServer
   `Creative Commons Attribution-Share Alike 4.0 International License`_
   by `OnlineGroups.net`_.
 
+  ..  _Creative Commons Attribution-Share Alike 4.0 International License:
+    http://creativecommons.org/licenses/by-sa/4.0/
+
 Introduction
 ============
 

@@ -18,6 +18,13 @@ from gs.group.member.base import user_admin_of_group
 
 
 def can_hide_post(userInfo, groupInfo, postInfo):
+    '''Can the person viewing the post hide the post?
+
+:param userInfo: The person viewing the post
+:param groupInfo: The group that contains the post
+:param dict postInfo: A dictionary containing the post information
+:returns: `True` if the person can hide the post, `False` otherwise.
+:retval: bool'''
     admin = user_admin_of_group(userInfo, groupInfo)
     author = user_author_of_post(userInfo, postInfo)
     retval = admin or author

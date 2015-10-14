@@ -16,13 +16,8 @@ function GSHidePost(hideButtonsSelector, dialogSelector, loadingSelector) {
     var hideButtons=null, dialog=null, loading=null, URL='../hide_post.ajax';
 
     function showDialog(event) {
-        var post=null, postId='';
-        
-        // Get the position of the post (hentry) that contains the
-        // hide button that has been clicked.
-        post = jQuery(this).parents('.hentry');
-        postId = post.attr('id');
-        postId = postId.slice(5);
+        var postId='';
+        postId = jQuery(this).data('post-id');
         dialog.data('postId', postId);
         dialog.modal('show');
     }
