@@ -1,0 +1,65 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-10-14 19:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: gs.group.messages.post.hide\n"
+
+#. Default: "There is an error:"
+#: ./hide.py:71
+msgid "error"
+msgstr ""
+
+#. Default: "There are errors:"
+#: ./hide.py:73
+msgid "errors"
+msgstr ""
+
+#. Default: "Sorry, this post is hidden. The reason that ${theAuthor} gave for hiding the post is as follows."
+#: ./browser/templates/post.pt:18
+msgid "hidden-post"
+msgstr ""
+
+#. Default: "Hide"
+#: ./browser/templates/action.pt:11
+#: ./hide.py:42
+msgid "hide-button"
+msgstr ""
+
+#. Default: "To hide this post add a reason below and click the <samp class=\"button\">Hide</samp> button. Everyone will see the reason the post was hidden, but the post will not be shown."
+#: ./browser/templates/hide.pt:12
+msgid "hide-dialog-instructions"
+msgstr ""
+
+#. Default: "Hide a post"
+#: ./hide.py:34
+msgid "hide-label"
+msgstr ""
+
+#. Default: "Reason"
+#: ./interfaces.py:28
+msgid "hide-reason"
+msgstr ""
+
+#. Default: "The reason the post needs to be hidden."
+#: ./interfaces.py:29
+msgid "hide-reason-help"
+msgstr ""
+
+#. Default: "Hidden the post."
+#: ./hide.py:56
+msgid "status-hidden"
+msgstr ""
+
