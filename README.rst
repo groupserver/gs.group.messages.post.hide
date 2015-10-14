@@ -19,11 +19,18 @@ Hiding a post on GroupServer
 Introduction
 ============
 
-This is the code for displaying posts that have been made to a group. It
-provides:
+This product supports hiding posts that have been made to a
+group. It provides both the code that hides the post and the code
+that displays what appears in instead of a hidden post.
 
-``hide_post.ajax``:
-  The AJAX-page that is used to hide a post.
+* ``gs-group-messages-post-hide-action`` is the *viewlet* that
+  provides the button that hides the post.
+* ``hide_post.ajax`` is the AJAX "page" that supplies the form
+  that hides a post.
+* ``gs-group-messages-post-hide-hidden`` is the viewlet that is
+  displayed when a post is hidden.
+* ``hide-post-20110415.js`` is the JavaScript resource that
+  supports hiding a post.
 
 Resources
 =========
@@ -31,7 +38,7 @@ Resources
 - Code repository:
   https://github.com/groupserver/gs.group.messages.post.hide/
 - Translations:
-  https://www.transifex.com/projects/p/gs-group-messages-post-hide/
+  https://www.transifex.com/groupserver/gs-group-messages-post-hide/
 - Questions and comments to
   http://groupserver.org/groups/development
 - Report bugs at https://redmine.iopen.net/projects/groupserver
