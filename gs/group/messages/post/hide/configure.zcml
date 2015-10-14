@@ -17,6 +17,7 @@
   <i18n:registerTranslations directory="locales" />
   <include package="zope.viewlet" file="meta.zcml" />
 
+  <!--The hide button-->
   <browser:viewlet
     name="gs-group-messages-post-hide"
     manager="gs.group.messages.post.base.interfaces.IActions"
@@ -26,11 +27,21 @@
     weight="20"
     title="Hide" />
 
+  <!--The Hide page (dialog box)-->
   <browser:page
     for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
     name="hide_post.ajax"
     class=".hide.HidePost"
     permission="zope2.View" />
+
+  <browser:viewlet
+    name="gs-group-messages-post-hide"
+    manager="gs.group.messages.post.base.interfaces.IBody"
+    class=".viewlet.HiddenPostViewlet"
+    template="browser/templates/post.pt"
+    permission="zope2.View"
+    weight="10"
+    title="Hidden post body" />
 
   <!-- JavaScript resources -->
   <browser:resource

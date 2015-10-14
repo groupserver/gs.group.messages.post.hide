@@ -5,17 +5,17 @@
   i18n:domain="gs.group.messages.post"
   tal:condition="view/post/hidden"
   tal:define="dshId string:post-${view/post/post_id}-dsh"
-  class="disclosureWidget hidden-post">
+  class="disclosureWidget gs-group-messages-post-hide">
   <p class="muted">
     <a class="disclosureButton" href="#" role="button"
        tal:attributes="aria-controls dshId">Hidden</a>
   </p>
   <div tal:attributes="id dshId"
        class="hidden-msg disclosureShowHide" style="display:none;">
-    <p class="vcard" i18n:translate="hidden-post">
+    <p class="h-card" i18n:translate="hidden-post">
       Sorry, this post is hidden.
       The reason that
-      <a class="fn" href="#" i18n:name="theAuthor"
+      <a class="p-name p-url" href="#" i18n:name="theAuthor"
          tal:define="u view/hiddenPostInfo/adminInfo"
          tal:attributes="href u/url"
          tal:content="u/name">an admin</a>
