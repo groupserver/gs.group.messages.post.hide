@@ -19,7 +19,7 @@
 
   <!--The hide button-->
   <browser:viewlet
-    name="gs-group-messages-post-hide"
+    name="gs-group-messages-post-hide-action"
     manager="gs.group.messages.post.base.interfaces.IActions"
     class=".viewlet.HideViewlet"
     template="browser/templates/action.pt"
@@ -29,13 +29,13 @@
 
   <!--The Hide page (dialog box)-->
   <browser:page
-    for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
     name="hide_post.ajax"
+    for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
     class=".hide.HidePost"
     permission="zope2.View" />
 
   <browser:viewlet
-    name="gs-group-messages-post-hide"
+    name="gs-group-messages-post-hide-hidden"
     manager="gs.group.messages.post.base.interfaces.IBody"
     class=".viewlet.HiddenPostViewlet"
     template="browser/templates/post.pt"
