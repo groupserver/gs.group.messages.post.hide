@@ -13,21 +13,16 @@
 #
 ############################################################################
 from __future__ import absolute_import, division, unicode_literals, print_function
-import sys
-if sys.version_info >= (3, ):  # pragma: no cover
-    from urllib.parse import quote
-else:  # Python 2
-    from urllib import quote
-from gs.core import to_unicode_or_bust
+from gs.core import mailto
 from gs.group.messages.post.base import PostViewlet
 from .canhide import can_hide_post
 from .hiddendetails import HiddenPostInfo
 
 
 class HideViewlet(PostViewlet):
-
+    @property
     def show(self):
-        retval = can_hide_post(self.loggedInUser, self.groupInfo, self.post)
+        retval = can_hide_post(self.loggedInUser, self.groupInfo, self.manager.post)
         return retval
 
 
@@ -51,22 +46,7 @@ I was viewing a post that is hidden in {groupInfo.name} on
 
 and...'''
         body = b.format(groupInfo=self.groupInfo, siteInfo=self.siteInfo, postId=postId)
-        self.hiddenSupportEmail = self.mailto(self.siteInfo.get_support_email(), subject, body)
-
-    @classmethod
-    def mailto(cls, toAddress, subject, body):
-        quotedSubject = cls.quote(subject)
-        quotedBody = cls.quote(body)
-        retval = cls.MAILTO.format(to=toAddress, subject=quotedSubject,
-                                   body=quotedBody)
-        return retval
-
-    @staticmethod
-    def quote(val):
-        uval = to_unicode_or_bust(val)
-        utf8val = uval.encode('utf-8')
-        retval = quote(utf8val)
-        return retval
+        self.hiddenSupportEmail = mailto(self.siteInfo.get_support_email(), subject, body)
 
     @property
     def show(self):
