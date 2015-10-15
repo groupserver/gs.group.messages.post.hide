@@ -29,9 +29,6 @@ class HideViewlet(PostViewlet):
 class HiddenPostViewlet(PostViewlet):
     '''The viewlet that shows information about posts that are hidden.'''
 
-    #: The mailto URI, for writing email messages to support.
-    MAILTO = 'mailto:{to}?subject={subject}&body={body}'
-
     def update(self):
         super(HiddenPostViewlet, self).update()
         postId = self.manager.post['post_id']
