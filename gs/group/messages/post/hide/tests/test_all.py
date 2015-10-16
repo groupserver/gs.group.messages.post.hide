@@ -15,7 +15,8 @@
 from __future__ import absolute_import, unicode_literals
 from unittest import TestSuite, main as unittest_main
 from gs.group.messages.post.hide.tests.canhide import (TestCanPost, )
-testCases = (TestCanPost, )
+from gs.group.messages.post.hide.tests.viewlet import (TestHideViewlet, TestHiddenViewlet, )
+testCases = (TestCanPost, TestHideViewlet, TestHiddenViewlet, )
 
 
 def load_tests(loader, tests, pattern):

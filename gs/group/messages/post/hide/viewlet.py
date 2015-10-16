@@ -22,7 +22,9 @@ from .hiddendetails import HiddenPostInfo
 class HideViewlet(PostViewlet):
     @property
     def show(self):
-        retval = can_hide_post(self.loggedInUser, self.groupInfo, self.manager.post)
+        canHide = can_hide_post(self.loggedInUser, self.groupInfo, self.manager.post)
+        hidden = bool(self.manager.post['hidden'])
+        retval = not(hidden) and canHide
         return retval
 
 
