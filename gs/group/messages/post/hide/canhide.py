@@ -28,9 +28,11 @@ def can_hide_post(userInfo, groupInfo, postInfo):
     admin = user_admin_of_group(userInfo, groupInfo)
     author = user_author_of_post(userInfo, postInfo)
     retval = admin or author
-    assert type(retval) == bool
+    assert type(retval) == bool, 'retval is not a Boolean'
     return retval
 
 
 def user_author_of_post(userInfo, postInfo):
-    return userInfo.id == postInfo['author_id']
+    retval = userInfo.id == postInfo['author_id']
+    assert type(retval) == bool, 'retval is not a Boolean'
+    return retval
