@@ -13,17 +13,29 @@
 #
 ############################################################################
 from __future__ import absolute_import, unicode_literals
-from unittest import TestSuite, main as unittest_main
-from gs.group.messages.post.hide.tests.canhide import (TestCanPost, )
-testCases = (TestCanPost, )
+from mock import MagicMock
+from unittest import TestCase
+from gs.group.messages.post.hide.canhide import (user_author_of_post, )
 
 
-def load_tests(loader, tests, pattern):
-    suite = TestSuite()
-    for testClass in testCases:
-        tests = loader.loadTestsFromTestCase(testClass)
-        suite.addTests(tests)
-    return suite
+class TestCanPost(TestCase):
 
-if __name__ == '__main__':
-    unittest_main()
+    def setUp(self):
+        pass
+
+    def test_user_author_of_post(self):
+        p = 'person'
+        userInfo = MagicMock()
+        userInfo.id = p
+        post = {'author_id': p}
+
+        r = user_author_of_post(userInfo, post)
+        self.assertTrue(r)
+
+    def test_other_author_of_post_isnt(self):
+        userInfo = MagicMock()
+        userInfo.id = 'person'
+        post = {'author_id': 'another'}
+
+        r = user_author_of_post(userInfo, post)
+        self.assertFalse(r)
