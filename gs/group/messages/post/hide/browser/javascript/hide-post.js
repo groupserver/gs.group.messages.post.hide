@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // Hiding a post
 //
 // Copyright © 2011, 2012, 2013, 2014 OnlineGroups.net and Contributors.
@@ -13,23 +13,24 @@
 //
 jQuery.noConflict();
 function GSHidePost(hideButtonsSelector, dialogSelector, loadingSelector) {
-    var hideButtons=null, dialog=null, loading=null, URL='../hide_post.ajax';
+    var hideButtons = null, dialog = null, loading = null,
+        URL = '../hide_post.ajax';
 
     function showDialog(event) {
-        var postId='';
+        var postId = '';
         postId = jQuery(this).data('post-id');
         dialog.data('postId', postId);
         dialog.modal('show');
     }
 
     function shown(event) {
-        var postId=null;
+        var postId = null;
         postId = jQuery(this).data('postId');
         loading.load(URL, {'form.postId': postId}, loaded);
     }
 
     function loaded(response, status, request) {
-        var b=null;
+        var b = null;
         b = jQuery('#form\\.actions\\.hide');
         b.button();
     }
@@ -40,18 +41,18 @@ function GSHidePost(hideButtonsSelector, dialogSelector, loadingSelector) {
         loading = jQuery(loadingSelector);
     }
     setup();  // Note: automatic execution
-  
+
     return {
-        init: function () {
+        init: function() {
             hideButtons.click(showDialog);
             dialog.on('shown', shown);
         }
     };
 }  // GSHidePost
 
-jQuery(window).load( function () {
-    var hider=null;
-    hider = GSHidePost('.hide-button', '#hide-the-post', 
+jQuery(window).load(function() {
+    var hider = null;
+    hider = GSHidePost('.hide-button', '#hide-the-post',
                        '#hide-the-post-loading');
     hider.init();
 });

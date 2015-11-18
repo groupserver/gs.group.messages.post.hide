@@ -1,6 +1,2 @@
-"use strict";jQuery.noConflict();function GSHidePost(g,f,e){var c=null,h=null,b=null,i="../hide_post.ajax";
-function j(m){var l="";l=jQuery(this).data("post-id");h.data("postId",l);h.modal("show")
-}function k(m){var l=null;l=jQuery(this).data("postId");b.load(i,{"form.postId":l},d)
-}function d(n,m,o){var l=null;l=jQuery("#form\\.actions\\.hide");l.button()}function a(){c=jQuery(g);
-h=jQuery(f);b=jQuery(e)}a();return{init:function(){c.click(j);h.on("shown",k)}}}jQuery(window).load(function(){var a=null;
-a=GSHidePost(".hide-button","#hide-the-post","#hide-the-post-loading");a.init()});
+'use strict';jQuery.noConflict();function GSHidePost(b,f,g){function h(a){a="";a=jQuery(this).data("post-id");c.data("postId",a);c.modal("show")}function k(a){a=null;a=jQuery(this).data("postId");d.load(l,{"form.postId":a},m)}function m(a,b,c){a=null;a=jQuery("#form\\.actions\\.hide");a.button()}var e=null,c=null,d=null,l="../hide_post.ajax",e=jQuery(b),c=jQuery(f),d=jQuery(g);return{init:function(){e.click(h);c.on("shown",k)}}}
+jQuery(window).load(function(){var b=null,b=GSHidePost(".hide-button","#hide-the-post","#hide-the-post-loading");b.init()});
